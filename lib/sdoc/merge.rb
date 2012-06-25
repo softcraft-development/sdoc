@@ -167,7 +167,7 @@ class SDoc::Merge
     unless @names.size > 0
       @directories.each do |dir|
         name = File.basename dir
-        name = File.basename File.dirname(dir) if name == 'doc'
+        name = File.basename File.dirname(dir) if (name == 'doc' || name == 'rdoc')
         @names << name
       end
     end
